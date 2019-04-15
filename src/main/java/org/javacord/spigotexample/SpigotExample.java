@@ -3,6 +3,7 @@ package org.javacord.spigotexample;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
+import org.javacord.spigotexample.command.discord.WhoIsOnlineCommand;
 
 public class SpigotExample extends JavaPlugin {
 
@@ -38,5 +39,8 @@ public class SpigotExample extends JavaPlugin {
         // Log a message that the connection was successful and log the url that is needed to invite the bot
         getLogger().info("Connected to Discord as " + api.getYourself().getDiscriminatedName());
         getLogger().info("Open the following url to invite the bot: " + api.createBotInvite());
+
+        // Register listeners
+        api.addListener(new WhoIsOnlineCommand());
     }
 }
