@@ -1,0 +1,3 @@
+name: SpigotExample
+version: 1.0.0
+main: org.javacord.spigotexample.SpigotExample
